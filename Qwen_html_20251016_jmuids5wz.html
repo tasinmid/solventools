@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience Our Prebuilt Tools</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a0b2e 0%, #2a0b3d 100%);
+            color: #f0f0f0;
+            line-height: 1.6;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .violet-splatter {
+            position: absolute;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .splatter-1 {
+            top: 10%;
+            left: 5%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, #8a2be2 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(20px);
+        }
+
+        .splatter-2 {
+            bottom: 15%;
+            right: 8%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #9932cc 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(30px);
+        }
+
+        .main-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 100px 0 60px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #da70d6, #9370db, #8a2be2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: pulse 3s infinite;
+            text-shadow: 0 0 15px rgba(147, 112, 219, 0.5);
+        }
+
+        @keyframes pulse {
+            0% { text-shadow: 0 0 15px rgba(147, 112, 219, 0.5); }
+            50% { text-shadow: 0 0 25px rgba(147, 112, 219, 0.8), 0 0 35px rgba(138, 43, 226, 0.6); }
+            100% { text-shadow: 0 0 15px rgba(147, 112, 219, 0.5); }
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: #e6ccff;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(to right, transparent, #9370db, transparent);
+            border-radius: 2px;
+        }
+
+        .tools-container {
+            padding: 0 0 50px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            width: 100%;
+        }
+
+        .tool-card {
+            background: linear-gradient(145deg, #2a0b3d 0%, #3a0b4d 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: none;
+            outline: none;
+        }
+
+        .tool-card.invoice-generator {
+            background: linear-gradient(145deg, #3a1b4d 0%, #4a1b5d 100%);
+            box-shadow: 0 15px 40px rgba(138, 43, 226, 0.5);
+            transform: scale(1.03);
+            border: 2px solid #8a2be2;
+        }
+
+        .tool-card.invoice-generator::before {
+            height: 6px;
+            background: linear-gradient(to right, #da70d6, #9370db, #8a2be2);
+        }
+
+        .tool-card.invoice-generator:hover {
+            transform: translateY(-12px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(138, 43, 226, 0.5);
+            border-color: #8a2be2;
+        }
+
+        .tool-card.coming-soon {
+            opacity: 0.85;
+        }
+
+        .tool-card.coming-soon:hover {
+            opacity: 0.95;
+            transform: translateY(-5px);
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, #da70d6, #9370db, #8a2be2);
+        }
+
+        .tool-icon {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-icon::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, transparent 70%);
+        }
+
+        .tool-icon i {
+            font-size: 5.5rem;
+            color: #da70d6;
+            text-shadow: 0 0 20px rgba(218, 112, 214, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover .tool-icon i {
+            transform: scale(1.1);
+            text-shadow: 0 0 30px rgba(218, 112, 214, 0.9);
+        }
+
+        .tool-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #e6ccff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .beta-badge {
+            background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+            color: white;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 5px rgba(255, 107, 107, 0.3);
+        }
+
+        .coming-soon-label {
+            background: rgba(138, 43, 226, 0.3);
+            color: #da70d6;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tool-description {
+            color: #ccc;
+            margin-bottom: 25px;
+            flex-grow: 1;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .action-button {
+            background: linear-gradient(90deg, #8a2be2, #9370db);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 10px rgba(138, 43, 226, 0.5);
+            position: relative;
+            overflow: hidden;
+            outline: none;
+            text-decoration: none; /* Remove underline from links */
+        }
+
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .action-button:hover::before {
+            left: 100%;
+        }
+
+        .action-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(138, 43, 226, 0.6);
+            background: linear-gradient(90deg, #9370db, #8a2be2);
+        }
+
+        .action-button i {
+            font-size: 0.9rem;
+        }
+
+        .pre-register-section {
+            text-align: center;
+            padding: 40px 20px 60px;
+            background: rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            border-radius: 16px;
+            backdrop-filter: blur(5px);
+        }
+
+        .pre-register-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #e6ccff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .pre-register-button {
+            background: linear-gradient(90deg, #8a2be2, #9370db);
+            color: white;
+            border: none;
+            padding: 16px 45px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(138, 43, 226, 0.5);
+            position: relative;
+            overflow: hidden;
+            outline: none;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .pre-register-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.6s;
+        }
+
+        .pre-register-button:hover::before {
+            left: 100%;
+        }
+
+        .pre-register-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(138, 43, 226, 0.7);
+            background: linear-gradient(90deg, #9370db, #8a2be2);
+        }
+
+        .pre-register-button i {
+            font-size: 1.1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0 20px;
+            color: #8a2be2;
+            font-size: 0.9rem;
+            border: none;
+        }
+
+        /* Notify Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, #1a0b2e 0%, #2a0b3d 100%);
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 50px rgba(138, 43, 226, 0.4);
+            position: relative;
+            border: 1px solid #4b0082;
+        }
+
+        .close {
+            color: #da70d6;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+        }
+
+        .close:hover {
+            color: #ff6b6b;
+        }
+
+        .modal-header {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .modal-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #e6ccff;
+            background: linear-gradient(to right, #da70d6, #9370db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: #e6ccff;
+            font-weight: 600;
+        }
+
+        .required-star {
+            color: #ff6b6b;
+            margin-left: 5px;
+            font-size: 1.2rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border-radius: 10px;
+            border: 1px solid #4b0082;
+            background: rgba(30, 10, 50, 0.7);
+            color: #f0f0f0;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #8a2be2;
+            box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.3);
+        }
+
+        .submit-button {
+            background: linear-gradient(90deg, #8a2be2, #9370db);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(138, 43, 226, 0.5);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .submit-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .submit-button:hover::before {
+            left: 100%;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(138, 43, 226, 0.6);
+            background: linear-gradient(90deg, #9370db, #8a2be2);
+        }
+
+        /* Success Modal - NEW */
+        .success-modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+        }
+
+        .success-modal-content {
+            background: linear-gradient(145deg, #1a0b2e 0%, #2a0b3d 100%);
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 550px;
+            box-shadow: 0 20px 50px rgba(138, 43, 226, 0.4);
+            position: relative;
+            border: 1px solid #4b0082;
+            text-align: center;
+        }
+
+        .success-header {
+            margin-bottom: 25px;
+        }
+
+        .success-header h2 {
+            font-size: 1.6rem;
+            color: #e6ccff;
+            background: linear-gradient(to right, #da70d6, #9370db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.4;
+        }
+
+        .team-section {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .team-member {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding: 20px;
+            background: rgba(30, 10, 50, 0.5);
+            border-radius: 16px;
+            border: 1px solid #4b0082;
+        }
+
+        .profile-pic {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #8a2be2;
+        }
+
+        .member-name {
+            font-weight: 700;
+            color: #e6ccff;
+            font-size: 1.2rem;
+        }
+
+        .member-title {
+            color: #ccc;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .linkedin-link {
+            color: #da70d6;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .linkedin-link:hover {
+            color: #ff6b6b;
+            text-decoration: none; /* Ensure no underline on hover */
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .close-success-btn {
+            background: rgba(138, 43, 226, 0.3);
+            color: #d0c0ff;
+            border: 1px solid #5a3b8a;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.95rem;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .close-success-btn:hover {
+            background: rgba(138, 43, 226, 0.4);
+            color: #e6ccff;
+        }
+
+        .schedule-btn {
+            background: linear-gradient(90deg, #8a2be2, #9370db);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 10px rgba(138, 43, 226, 0.5);
+            text-decoration: none; /* Remove underline */
+        }
+
+        .schedule-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .schedule-btn:hover::before {
+            left: 100%;
+        }
+
+        .schedule-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(138, 43, 226, 0.6);
+            background: linear-gradient(90deg, #9370db, #8a2be2);
+        }
+
+        .crack {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #9370db, transparent);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .crack-1 {
+            top: 25%;
+            transform: rotate(-5deg);
+        }
+
+        .crack-2 {
+            top: 75%;
+            transform: rotate(3deg);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3.2rem; }
+            .subtitle { font-size: 1.4rem; }
+            .tool-icon { height: 180px; }
+            .tool-icon i { font-size: 4.5rem; }
+            .pre-register-section { padding: 30px 20px 50px; }
+            .modal-content, .success-modal-content { width: 95%; padding: 25px; }
+            .button-row { flex-direction: column; gap: 12px; }
+            .close-success-btn, .schedule-btn { width: 100%; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.2rem; }
+            header { padding: 70px 0 50px; }
+            .tool-icon { height: 150px; }
+            .tool-icon i { font-size: 3.5rem; }
+            .tool-content { padding: 25px 20px; }
+            .tool-title { font-size: 1.6rem; }
+            .pre-register-title { font-size: 1.4rem; }
+            .pre-register-button { padding: 14px 35px; font-size: 1rem; }
+            footer { padding: 20px 0 10px; }
+            .modal-header h2, .success-header h2 { font-size: 1.4rem; }
+            .profile-pic { width: 60px; height: 60px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="violet-splatter splatter-1"></div>
+    <div class="violet-splatter splatter-2"></div>
+    <div class="crack crack-1"></div>
+    <div class="crack crack-2"></div>
+    
+    <div class="main-content">
+        <header>
+            <h1>Experience Our Prebuilt Tools</h1>
+            <p class="subtitle">Discover our collection of powerful business tools designed to transform your workflow</p>
+        </header>
+
+        <div class="tools-container">
+            <div class="tools-grid">
+                <div class="tool-card invoice-generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3 class="tool-title">Invoice Generator <span class="beta-badge">Beta</span></h3>
+                        <p class="tool-description">Create professional invoices with automated calculations and customizable templates. Perfect for freelancers and businesses.</p>
+                        <a href="https://invoiza.solven.app/" class="action-button">Try Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="tool-card coming-soon">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3 class="tool-title">Proposal Generator <span class="coming-soon-label">Coming Soon</span></h3>
+                        <p class="tool-description">Craft winning business proposals with our intuitive templates and smart content suggestions.</p>
+                        <button class="action-button notify-btn" data-tool="Proposal Generator">Notify Me <i class="fas fa-bell"></i></button>
+                    </div>
+                </div>
+
+                <div class="tool-card coming-soon">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3 class="tool-title">Quote & Invoice Combo <span class="coming-soon-label">Coming Soon</span></h3>
+                        <p class="tool-description">Seamlessly convert quotes to invoices with our integrated solution. Save time and reduce errors.</p>
+                        <button class="action-button notify-btn" data-tool="Quote & Invoice Combo">Notify Me <i class="fas fa-bell"></i></button>
+                    </div>
+                </div>
+
+                <div class="tool-card coming-soon">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3 class="tool-title">Contract Generator <span class="coming-soon-label">Coming Soon</span></h3>
+                        <p class="tool-description">Create legally sound contracts in minutes with our library of customizable templates.</p>
+                        <button class="action-button notify-btn" data-tool="Contract Generator">Notify Me <i class="fas fa-bell"></i></button>
+                    </div>
+                </div>
+
+                <div class="tool-card coming-soon">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-word"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3 class="tool-title">Document Generator <span class="coming-soon-label">Coming Soon</span></h3>
+                        <p class="tool-description">Automate the creation of any business document with our powerful template engine.</p>
+                        <button class="action-button notify-btn" data-tool="Document Generator">Notify Me <i class="fas fa-bell"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pre-register-section">
+            <h2 class="pre-register-title">Get Early Access to All Features</h2>
+            <a href="https://solven.app" class="pre-register-button">Pre-register now for all features <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <footer>
+            <p>© 2023 PREBUILT TOOLS SUITE. ALL RIGHTS RESERVED.</p>
+        </footer>
+    </div>
+
+    <!-- Notify Modal -->
+    <div id="notifyModal" class="modal">
+        <div class="modal-content">
+            <span class="close notify-close">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle">Get early access when <span id="toolName">tool</span> releases</h2>
+            </div>
+            <form id="notifyForm">
+                <div class="form-group">
+                    <label for="name">Name <span class="required-star">*</span></label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required-star">*</span></label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country <span class="required-star">*</span></label>
+                    <select id="country" class="form-control" required>
+                        <option value="">Select your country</option>
+                        <option value="Afghanistan">Afghanistan</option>
+                        <option value="Albania">Albania</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="Andorra">Andorra</option>
+                        <option value="Angola">Angola</option>
+                        <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Armenia">Armenia</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Azerbaijan">Azerbaijan</option>
+                        <option value="Bahamas">Bahamas</option>
+                        <option value="Bahrain">Bahrain</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Barbados">Barbados</option>
+                        <option value="Belarus">Belarus</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Belize">Belize</option>
+                        <option value="Benin">Benin</option>
+                        <option value="Bhutan">Bhutan</option>
+                        <option value="Bolivia">Bolivia</option>
+                        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                        <option value="Botswana">Botswana</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="Brunei">Brunei</option>
+                        <option value="Bulgaria">Bulgaria</option>
+                        <option value="Burkina Faso">Burkina Faso</option>
+                        <option value="Burundi">Burundi</option>
+                        <option value="Cabo Verde">Cabo Verde</option>
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Cameroon">Cameroon</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Central African Republic">Central African Republic</option>
+                        <option value="Chad">Chad</option>
+                        <option value="Chile">Chile</option>
+                        <option value="China">China</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Comoros">Comoros</option>
+                        <option value="Congo">Congo</option>
+                        <option value="Costa Rica">Costa Rica</option>
+                        <option value="Croatia">Croatia</option>
+                        <option value="Cuba">Cuba</option>
+                        <option value="Cyprus">Cyprus</option>
+                        <option value="Czech Republic">Czech Republic</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Djibouti">Djibouti</option>
+                        <option value="Dominica">Dominica</option>
+                        <option value="Dominican Republic">Dominican Republic</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="El Salvador">El Salvador</option>
+                        <option value="Equatorial Guinea">Equatorial Guinea</option>
+                        <option value="Eritrea">Eritrea</option>
+                        <option value="Estonia">Estonia</option>
+                        <option value="Eswatini">Eswatini</option>
+                        <option value="Ethiopia">Ethiopia</option>
+                        <option value="Fiji">Fiji</option>
+                        <option value="Finland">Finland</option>
+                        <option value="France">France</option>
+                        <option value="Gabon">Gabon</option>
+                        <option value="Gambia">Gambia</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Greece">Greece</option>
+                        <option value="Grenada">Grenada</option>
+                        <option value="Guatemala">Guatemala</option>
+                        <option value="Guinea">Guinea</option>
+                        <option value="Guinea-Bissau">Guinea-Bissau</option>
+                        <option value="Guyana">Guyana</option>
+                        <option value="Haiti">Haiti</option>
+                        <option value="Honduras">Honduras</option>
+                        <option value="Hungary">Hungary</option>
+                        <option value="Iceland">Iceland</option>
+                        <option value="India">India</option>
+                        <option value="Indonesia">Indonesia</option>
+                        <option value="Iran">Iran</option>
+                        <option value="Iraq">Iraq</option>
+                        <option value="Ireland">Ireland</option>
+                        <option value="Israel">Israel</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Jamaica">Jamaica</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Jordan">Jordan</option>
+                        <option value="Kazakhstan">Kazakhstan</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="Kiribati">Kiribati</option>
+                        <option value="Kuwait">Kuwait</option>
+                        <option value="Kyrgyzstan">Kyrgyzstan</option>
+                        <option value="Laos">Laos</option>
+                        <option value="Latvia">Latvia</option>
+                        <option value="Lebanon">Lebanon</option>
+                        <option value="Lesotho">Lesotho</option>
+                        <option value="Liberia">Liberia</option>
+                        <option value="Libya">Libya</option>
+                        <option value="Liechtenstein">Liechtenstein</option>
+                        <option value="Lithuania">Lithuania</option>
+                        <option value="Luxembourg">Luxembourg</option>
+                        <option value="Madagascar">Madagascar</option>
+                        <option value="Malawi">Malawi</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Maldives">Maldives</option>
+                        <option value="Mali">Mali</option>
+                        <option value="Malta">Malta</option>
+                        <option value="Marshall Islands">Marshall Islands</option>
+                        <option value="Mauritania">Mauritania</option>
+                        <option value="Mauritius">Mauritius</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Micronesia">Micronesia</option>
+                        <option value="Moldova">Moldova</option>
+                        <option value="Monaco">Monaco</option>
+                        <option value="Mongolia">Mongolia</option>
+                        <option value="Montenegro">Montenegro</option>
+                        <option value="Morocco">Morocco</option>
+                        <option value="Mozambique">Mozambique</option>
+                        <option value="Myanmar">Myanmar</option>
+                        <option value="Namibia">Namibia</option>
+                        <option value="Nauru">Nauru</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Nicaragua">Nicaragua</option>
+                        <option value="Niger">Niger</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="North Korea">North Korea</option>
+                        <option value="North Macedonia">North Macedonia</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Oman">Oman</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Palau">Palau</option>
+                        <option value="Palestine">Palestine</option>
+                        <option value="Panama">Panama</option>
+                        <option value="Papua New Guinea">Papua New Guinea</option>
+                        <option value="Paraguay">Paraguay</option>
+                        <option value="Peru">Peru</option>
+                        <option value="Philippines">Philippines</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Qatar">Qatar</option>
+                        <option value="Romania">Romania</option>
+                        <option value="Russia">Russia</option>
+                        <option value="Rwanda">Rwanda</option>
+                        <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                        <option value="Saint Lucia">Saint Lucia</option>
+                        <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+                        <option value="Samoa">Samoa</option>
+                        <option value="San Marino">San Marino</option>
+                        <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="Senegal">Senegal</option>
+                        <option value="Serbia">Serbia</option>
+                        <option value="Seychelles">Seychelles</option>
+                        <option value="Sierra Leone">Sierra Leone</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Slovakia">Slovakia</option>
+                        <option value="Slovenia">Slovenia</option>
+                        <option value="Solomon Islands">Solomon Islands</option>
+                        <option value="Somalia">Somalia</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="South Korea">South Korea</option>
+                        <option value="South Sudan">South Sudan</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Sri Lanka">Sri Lanka</option>
+                        <option value="Sudan">Sudan</option>
+                        <option value="Suriname">Suriname</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="Syria">Syria</option>
+                        <option value="Tajikistan">Tajikistan</option>
+                        <option value="Tanzania">Tanzania</option>
+                        <option value="Thailand">Thailand</option>
+                        <option value="Timor-Leste">Timor-Leste</option>
+                        <option value="Togo">Togo</option>
+                        <option value="Tonga">Tonga</option>
+                        <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                        <option value="Tunisia">Tunisia</option>
+                        <option value="Turkey">Turkey</option>
+                        <option value="Turkmenistan">Turkmenistan</option>
+                        <option value="Tuvalu">Tuvalu</option>
+                        <option value="Uganda">Uganda</option>
+                        <option value="Ukraine">Ukraine</option>
+                        <option value="United Arab Emirates">United Arab Emirates</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="United States">United States</option>
+                        <option value="Uruguay">Uruguay</option>
+                        <option value="Uzbekistan">Uzbekistan</option>
+                        <option value="Vanuatu">Vanuatu</option>
+                        <option value="Vatican City">Vatican City</option>
+                        <option value="Venezuela">Venezuela</option>
+                        <option value="Vietnam">Vietnam</option>
+                        <option value="Yemen">Yemen</option>
+                        <option value="Zambia">Zambia</option>
+                        <option value="Zimbabwe">Zimbabwe</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number <span class="required-star">*</span></label>
+                    <input type="tel" id="phone" class="form-control" required>
+                </div>
+                <button type="submit" class="submit-button">Get early access</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal - NEW -->
+    <div id="successModal" class="success-modal">
+        <div class="success-modal-content">
+            <div class="success-header">
+                <h2>Thank you for your attention, You can start using our pre built tools for now.</h2>
+            </div>
+            
+            <div class="team-section">
+                <div class="team-member">
+                    <img src="https://i.postimg.cc/8c7h742n/Whats-App-Image-2025-09-01-at-20-00-41-b6f60f6a.jpg" alt="Tahmid Hasan Tasin" class="profile-pic">
+                    <div class="member-name">Tahmid Hasan Tasin</div>
+                    <div class="member-title">AI expert & Entrepreneur</div>
+                    <a href="https://www.linkedin.com/in/tasinmid" class="linkedin-link" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn Profile
+                    </a>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://i.postimg.cc/mhWLW2B2/Linked-In-pfp-1x1.jpg" alt="AS Ayman" class="profile-pic">
+                    <div class="member-name">AS Ayman</div>
+                    <div class="member-title">Development & AI Automation</div>
+                    <a href="https://www.linkedin.com/in/asayman" class="linkedin-link" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn Profile
+                    </a>
+                </div>
+            </div>
+            
+            <div class="button-row">
+                <button class="close-success-btn" id="closeSuccessBtn">Close</button>
+                <a href="https://calendly.com/tasinmid/30min" class="schedule-btn" target="_blank">Schedule a call</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const notifyModal = document.getElementById("notifyModal");
+        const successModal = document.getElementById("successModal");
+        const notifyCloseBtn = document.querySelector(".notify-close");
+        const notifyButtons = document.querySelectorAll(".notify-btn");
+        const toolNameSpan = document.getElementById("toolName");
+        const notifyForm = document.getElementById("notifyForm");
+        const closeSuccessBtn = document.getElementById("closeSuccessBtn");
+
+        // Open notify modal
+        notifyButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                const toolName = this.getAttribute("data-tool");
+                toolNameSpan.textContent = toolName;
+                notifyModal.style.display = "block";
+                notifyForm.reset();
+            });
+        });
+
+        // Close notify modal
+        notifyCloseBtn.onclick = () => notifyModal.style.display = "none";
+        window.onclick = (e) => {
+            if (e.target === notifyModal) notifyModal.style.display = "none";
+            if (e.target === successModal) successModal.style.display = "none";
+        };
+
+        // Handle form submission
+        notifyForm.onsubmit = (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const country = document.getElementById("country").value;
+            const phone = document.getElementById("phone").value;
+            const toolName = document.getElementById("toolName").textContent;
+            
+            const formData = new FormData();
+            formData.append("name", name);
+            formData.append("email", email);
+            formData.append("country", country);
+            formData.append("phone", phone);
+            formData.append("toolName", toolName);
+            
+            // Fire-and-forget
+            fetch("https://script.google.com/macros/s/AKfycbxiEC5xJ0UrxDmWpZsSUr47CCiXni937igZHVjNnKY-IuLrvy8P24mmqXJlu4_bl8Dk/exec?gid=0", {
+                method: "POST",
+                body: formData
+            }).catch(console.warn);
+            
+            // Close notify modal and open success modal
+            notifyModal.style.display = "none";
+            successModal.style.display = "block";
+        };
+
+        // Close success modal
+        closeSuccessBtn.onclick = () => {
+            successModal.style.display = "none";
+            window.location.href = window.location.pathname;
+        };
+    </script>
+</body>
+</html>
